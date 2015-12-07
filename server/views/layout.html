@@ -13,10 +13,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+  <!-- <div class="container"> -->
+  <nav>
+    <div class="nav-wrapper easeInElastic lime accent-3">
+      <a href="#!" class="right brand-logo"> <h1 class="freedom-nav-logo"><img src="images/archlogo.png"></h1> </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down">
+        {% if user %}
+        <li><a href="/map">Home</a></li>
+        <li><a class="logout" href="/auth/logout">Logout</a></li>
+        {% else %}
+        <li><a class="login" href="/">Login</a></li>
+        <li><a class="signup" href="/index">Sign Up</a></li>
+        {% endif %}
+      </ul>
+      <ul class="side-nav right-aligned" id="mobile-demo">
+        {% if user %}
+        <li><a href="/map">Home</a></li>
+        <li><a class="logout" href="/auth/logout">Logout</a></li>
+        {% else %}
+        <li><a class="login" href="/">Login</a></li>
+        <li><a class="signup" href="/index">Sign Up</a></li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </nav>
     {% block content %}
     {% endblock %}
+
+  <!-- </div> -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/materialize.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=" + {{ apiKey }}></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/googlemap.js"></script>
   </body>
 </html>

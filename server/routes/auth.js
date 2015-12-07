@@ -14,8 +14,8 @@ router.get('/google',
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
-    res.send('you are logged in');
-    // res.redirect('/');
+    // res.send('you are logged in');
+    res.redirect('/map');
   });
 
 router.get('/logout', function(req, res){

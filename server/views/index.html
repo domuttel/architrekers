@@ -7,10 +7,13 @@
 
   <div class="container">
 
-    <h1>{{ title }}</h1>
-    <p>Welcome! Please Login.</p>
+    <h3>Welcome to {{ title }}</h3>
+    <p>Login to begin seeing.</p>
     <hr><br>
-    <a href="/auth/google" class="waves-effect waves-light btn">Google</a>
+    <a href="/auth/google"  method="post" name="installer" class="waves-effect waves-light lime accent-4 btn" id="g-login">Google Login</a>
+    <br><br>
+    {% block signup %}{% endblock %}
+
 
   </div>
 
