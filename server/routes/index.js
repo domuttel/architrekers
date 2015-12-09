@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var config = require('../_config.js');
+// var config = require('../_config.js');
 var locations = require('../../server/architecture.js');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ARCHiTREK', apiKey: config.google.apiKey });
+  res.render('index', { title: 'ARCHiTREK', apiKey: process.env.apiKey });
 });
 
 router.get('/map', function(req, res, next) {
