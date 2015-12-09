@@ -1,33 +1,9 @@
-// $(document).on('ready', function(){
-  // initialize();
-// });
-// function initialize() {
-
   // Create an array of styles.
   var styles = [
     {
       stylers: [
-        { hue: "#00ffe6" },
-        { saturation: -20 }
+        { hue: "#aeea00" },
       ]
-    },{
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [
-        { lightness: 100 },
-        { visibility: "simplified" }
-      ]
-    },{
-      featureType: "road",
-      elementType: "labels",
-      stylers: [
-        { visibility: "off" }
-      ]
-    },{
-      featureType: "road",
-      stylers: [
-        { hue: "#00ff00" }
-    ]
     }
   ];
 
@@ -40,7 +16,7 @@
   // to the map type control.
   var mapOptions = {
     zoom: 11,
-    center: new google.maps.LatLng(39.7351193,-104.9909746),
+    center: new google.maps.LatLng(39.7371878,-104.9893451),
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
     }
@@ -51,58 +27,131 @@
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
-// }
-
-// // *** Google Maps API ***
-// // There are three (3) parts to successfully loading a google Maps API:
-// //
-// // First, you must designate a space for the map to be displayed on the HTML page (<div class="map-canvas">)
-// // Second, you must load the Google Maps API v3 with a script tag, usually in the head of the views file. In TripStacker, we loaded it after the footer in the <body> tag.
-// // Third, you must initialize the map with JavaScript. You can add a script tag directly in the HTML file, or you can require a separate Javascript file that initializes the map.
-
-// // * initialize new google maps LatLng object *
-// // the process of turning an address into a geographic point is known as geocoding.
-// var latAndLong = new google.maps.LatLng(39.7351193,-104.9909746);
 
 
+// //** DENVER ART MUSEUM **//
+// var damContentString = "<h1>Denver Art Museum</h1> <h6>The North Building</h6><p>The North Building or 'Gio Ponti Wing', a major and distinctive seven-story 210,000-ft2 addition, opened in 1971. It allowed the museum to finally display its collections under one roof. The building was designed by Italian modernist architect <a href='https://en.wikipedia.org/wiki/Gio_Ponti' title='Gio Ponti'>Gio Ponti</a>, with local architects James Sudler Assoc. of Denver. Ponti said that “Art is a treasure, and these thin but jealous walls defend it.” It is his only completed design built in the United States.[4] Ponti wanted the DAM building, housing the important art within, to break from the traditional museum archetypes by placing more than a million reflective glass tiles on the building’s exterior, along with a dramatic “castle-like” façade. The architecturally unique tower building has 24 sides, and is clad in reflective grey glass tiles specially designed by Dow Corning.<p/><h6>The Duncan Pavilion</h6><p>The Duncan Pavilion is a second story addition to the Morgan Wing of the Denver Art Museum, opened in February 2006. It is a link between the new <a href='https://en.wikipedia.org/wiki/Daniel_Libeskind' title='Daniel Libeskind'> Daniel Libeskind </a>designed Hamilton Building and the existing art museum buildings, including the famous 1971 Geo Ponti designed North Building tower.</p>" +
+// "<p>The project's intent included preserving the integrity of the oldest part of the museum, the landmark Morgan Wing of the art museum built in 1954, while providing a significant mechanical upgrade for it.</p>" + "<p>The Duncan Pavilion's open assembly area receives the pedestrian bridge from the Hamilton Building with a new pedestrian elevator and monumental glass stair linking pedestrian traffic to the existing Signature Gallery on the first floor. The strongly day lighted space provides a sense of transition between the new and old buildings and a resting point. An upgraded extension of the existing freight elevator creates the final link in the system facilitating artwork traffic between the existing and new buildings so the artwork can be received and serviced in the Hamilton Building and transported to and from the Ponti building’s gallery without exiting the protective environment of the museum.</p>" + "<p>The new rooftop patio provides panoramic city views of the City Capitol, Civic Center Park, Denver Library, Wellington Webb and other buildings as well as the unique view of standing directly under the new Hamilton Building “prow” almost exactly as you exit the building onto the patio, creating a very dramatic effect.</p>" + "<h6>Hamilton Building</h6><p>The Frederic C. Hamilton Building holds the Modern and Contemporary art collection, along with the Architecture and Design collection, and Oceanic art collection. The unique building also serves as the main entrance to the rest of the museum complex.[8] This ambitious project doubled the size of the museum, allowing for an expansion of the art on view, inside a bold aesthetic facade.</p>" + "<p> The complex deconstructivist geometric design of the Hamilton building consists 20 sloping planes, covered in 230,000 square feet of titanium shingles. The angular design juts in many directions, supported by a 2,740-ton structure that contains more than 3,100 pieces of steel. One of the angled elements extends 100 feet (30 m) over the street below. None of the 20 planes is parallel or perpendicular to another.</p>" + "<p>The design uses many extended angular planes to be reminiscent of the natural landscape. Similar to the peaked roof of the Denver International Airport, the Hamilton building emulates the sharp angles of the nearby Rocky Mountains, as well as the geometric crystals found at the mountains' base near Denver. Daniel Libeskind, architect of the building, said “I was inspired by the light and geology of the Rockies, but most of all by the wide-open faces of the people of Denver.”[10] The titanium panels also reflect the light of the Colorado sunshine.";
+
+// var daminfowindow = new google.maps.InfoWindow({
+//     content: damContentString
+// });
 
 
+// var DenverArtMuseum = new google.maps.Marker({ position: {lat: 39.7371878, lng: -104.9893451}, map: map,
+//   title: DenverArtMuseum.title
+//  });
 
-// // * create a Map options object *
-// // these options are used to initialize the map's properties
-// // center (what map will focus on) and zoom (0-22) are required fields. There are optional fields such as mapTypeId (ROADMAP, SATELLITE, HYBRID, TERRAIN).
-// var mapOptions = {
-//   center: latAndLong,
-//   zoom: 13,
-//   mapTypeId: google.maps.MapTypeId.ROADMAP
+// DenverArtMuseum.addListener('click', function(a,b) {
 
-// };
+//     daminfowindow.open(map, DenverArtMuseum);
+// });
+// //** END DENVER ART MUSEUM **//
 
-// // * get the maps div's HTML obj *
-// // this step was superfluous, but it shows how we can save the DOM element as a JavaScript variable
-// // var map_canvas_obj = document.getElementById("map-canvas");
+// //** MUSEUM OF CONTEMPORARY ART **//
 
-// // * create a map object with the Map constructor function. *
-// // Map takes two parameters: DOM element and mapOptions object *
-// var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+//   var mcacontentString = "<h1>Museum of Contemporary Art Denver</h1><p>In October 2007, under the directorship of Cydney Payton, MCA Denver opened its new, 27,000-square foot, environmentally sustainable facility in lower downtown Denver designed by architect <a href='https://en.wikipedia.org/wiki/David_Adjaye' title='David Adjaye'>David Adjaye</a> of Adjaye Associates (UK).The building, Adjaye's first museum commission, was designed to minimize boundaries between the exterior spaces of the city and the interior galleries of the museum. Hidden skylights fill the interior spaces with natural light, and large windows look out on the city streets. The building has five galleries as well as dedicated education spaces, a shop, library and rooftop cafe.</p>";
 
-// // * add a marker to the page with the Marker constructor *
-// // Marker constructor takes a single object literal, which specifies the initial properties of the marker (position, map)
-// // Google has a tutorial for markers: http://bit.ly/MpWc8W
-// // Stack Overflow thread on changing color: http://bit.ly/1faa0yW
-// var initialMarker = new google.maps.Marker({
-//                     position: latAndLong,
-//                     map: map,
-//                     title: "Hello, Fullstack!",
-//                     icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-//                   });
+//   var mcainfowindow = new google.maps.InfoWindow({
+//     content: mcacontentString
+//   });
 
-var DenverArtMuseum = new google.maps.Marker({ position: {lat: 39.736164, lng: -104.989200}, map: map
- });
+//   var McaDenver = new google.maps.Marker({ position: {lat: 39.751665, lng: -105.001312},
+//     map: map,
+//     title: McaDenver.title
+//   });
 
-// // google.maps.event.addDomListener(window, 'load');
-// console.log("Map initialized.");
+//   McaDenver.addListener('click', function() {
+//     mcainfowindow.open(map, McaDenver);
+//   });
 
-// // Google recommends => google.maps.event.addDomListener(window, 'load', initialize);
-// // Alternatively, you could wrap the entire API in a $(document).ready tag.
-// // google.maps.event.addDomListener(window, 'load', initialize);
+// //** Union Station **//
+//   var unionContentString = "<h1>Union Station</h1>";
+
+//   var unioninfowindow = new google.maps.InfoWindow({
+//     content: unionContentString
+//   });
+
+
+//   var UnionStation = new google.maps.Marker({ position: {lat: 39.752651, lng: -105.001685},
+//     map: map,
+//     title: UnionStation.title
+//   });
+
+//   UnionStation.addListener('click', function() {
+//     unioninfowindow.open(map, UnionStation);
+//   });
+
+// //** Denver Central Library **//
+//   var centralLibraryContentString = "<h1>Denver Central Library</h1>";
+
+//   var centrallibraryinfowindow = new google.maps.InfoWindow({
+//       content: centralLibraryContentString
+//   });
+
+
+//   var DenverCentralLibrary = new google.maps.Marker({ position: {lat: 39.7378285, lng: -104.987871},
+//     map: map,
+//     title: DenverCentralLibrary.title
+//   });
+
+//   DenverCentralLibrary.addListener('click', function() {
+//     centrallibraryinfowindow.open(map, DenverCentralLibrary);
+//   });
+
+// //** Ellie Caulkins Opera House **//
+//   var ellieContentString = "<h1>Ellie Caulkins Opera House</h1>";
+
+//   var ellieinfowindow = new google.maps.InfoWindow({
+//       content: ellieContentString
+//   });
+
+
+//   var EllieCaulkinsOperaHouse = new google.maps.Marker({ position: {lat: 39.7452546, lng: -104.998336},
+//     map: map,
+//     title: EllieCaulkinsOperaHouse.title
+//   });
+
+//   EllieCaulkinsOperaHouse.addListener('click', function() {
+//     ellieinfowindow.open(map, EllieCaulkinsOperaHouse);
+//   });
+
+// //** Wells Fargo Center **//
+//   var wellsContentString = "<h1>Wells Fargo Center</h1>";
+
+//   var wellsinfowindow = new google.maps.InfoWindow({
+//       content: wellsContentString
+//   });
+
+
+//   var WellsFargoCenter = new google.maps.Marker({ position: {lat: 39.744452, lng: -104.9867323},
+//     map: map,
+//     title: WellsFargoCenter.title
+//   });
+
+//   WellsFargoCenter.addListener('click', function() {
+//     wellsinfowindow.open(map, WellsFargoCenter);
+//   });
+
+//** Taxi **//
+  var taxiContentString = "<h1>Taxi</h1>";
+
+  var taxiinfowindow = new google.maps.InfoWindow({
+      content: taxiContentString
+  });
+
+
+  var Taxi = new google.maps.Marker({ position: {lat: 39.772329, lng: -104.983799},
+    map: map,
+    title: "Taxi"
+  });
+
+  Taxi.addListener('click', function() {
+    taxiinfowindow.open(map, Taxi);
+
+
+  });
+
+  function showMarker(marker){
+
+  };

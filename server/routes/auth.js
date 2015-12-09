@@ -16,7 +16,7 @@ router.get('/google/callback',
   function(req, res) {
     // res.send('you are logged in');
     res.redirect('/map');
-  });
+});
 
 router.get('/logout', function(req, res){
   req.logout();

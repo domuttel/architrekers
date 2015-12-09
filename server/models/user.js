@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 var User = new Schema({
   oauthID: Number,
   name: String,
-  created: Date
+  created: Date,
+  locations: Array
 });
 
 
