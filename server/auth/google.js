@@ -4,9 +4,9 @@ var User = require('../models/user.js');
 // var config = require('../_config.js');
 
 module.exports = passport.use(new GoogleStrategy({
-  clientID: process.ENV.clientID,
-  clientSecret: process.ENV.clientSecret,
-  callbackURL: process.ENV.callbackURL
+  clientID: process.env.clientID,
+  clientSecret: process.env.clientSecret,
+  callbackURL: process.env.callbackURL
   },
   function(request, accessToken, refreshToken, profile, done) {
     User.findOne({ oauthID: profile.id }, function(err, user) {
