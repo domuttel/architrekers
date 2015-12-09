@@ -21,7 +21,7 @@ var app = express();
 
 
 // *** mongoose *** //
-mongoose.connect('mongodb://localhost/passport-social-auth');
+mongoose.connect('mongodb://dominicmuttel:BigGuy10032@ds027335.mongolab.com:27335/heroku_s2ld9n6f');
 
 
 // *** view engine *** //

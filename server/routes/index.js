@@ -17,14 +17,4 @@ router.get('/index', function(req, res, next) {
 });
 
 
-
-
-// {% if locations %}
-//   {% for location in locations %}
-//     <p>{{location|function}}</p>
-//   {% endfor %}
-// {% endif %}
-
-
-
 module.exports = router;
